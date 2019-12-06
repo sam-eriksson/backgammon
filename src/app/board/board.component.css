@@ -1,0 +1,9 @@
+
+svg { 
+    background-color: rgb(224, 211, 151)
+}
+
+svg text.heavy {
+
+    font: 40px serif; fill: red
+}

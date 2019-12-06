@@ -1,0 +1,29 @@
+
+<svg name="svgelement" [attr.width]=width [attr.height]=height>
+    <!--Points-->
+    <polygon *ngFor="let trianglevals of triangleValues" [attr.id]="trianglevals.name" [attr.points]="trianglevals.polygon"
+    [attr.fill]="trianglevals.fills" stroke="rgb(119, 128, 0)" stroke-width="5" (click)="clickEventTri($event)"/>
+    <!--Chips-->
+    <circle *ngFor="let circlevals of circleValues" [attr.id]="circlevals.name" [attr.cx]="circlevals.cx" [attr.cy]="circlevals.cy" [attr.r]="circlevals.r" 
+    stroke="green" stroke-width="4" [attr.fill]="circlevals.fill" (click)="clickEventChip($event)" />
+    <!--<text *ngFor="let circlevals of circleValues"
+    [attr.x]="circlevals.cx" [attr.y]="circlevals.cy" class="heavy">{{circlevals.name}}</text>-->
+    <!--Dice Boxes-->
+    <rect *ngFor="let d of dv.dv" [attr.x]="d.topx" [attr.y]="d.topy"
+     [attr.width]="d.height" [attr.height]="d.height" style="fill:white;stroke-width:3;stroke:rgb(0,0,0)" (click)="rollDice($event)"/>
+     <!--Dice 1 Dies-->
+     <circle *ngFor="let i of dv.dv[0].p" [attr.cx]="i.x" [attr.cy]="i.y"
+     r="10" stroke="black" stroke-width="3" fill="black" [attr.visibility]="i.hidden" />
+     <!--Dice 2 Dies-->
+     <circle *ngFor="let i of dv.dv[1].p" [attr.cx]="i.x" [attr.cy]="i.y"
+     r="10" stroke="black" stroke-width="3" fill="black" [attr.visibility]="i.hidden" />
+     <!--Text Box-->
+     <rect [attr.x]="tx.boxtopx" [attr.y]="tx.boxtopy" [attr.width]="tx.boxwidth" [attr.height]="tx.boxheight" 
+     style="fill:white;stroke-width:3;stroke:rgb(0,0,0)" (click)="clickHome($event)"></rect>
+     <!--Text in the Box-->
+     <text [attr.x]="tx.text1x" [attr.y]="tx.text1y" class="heavy">{{tx.text1}}</text>
+     <text [attr.x]="tx.text2x" [attr.y]="tx.text2y" class="heavy">{{tx.text2}}</text>
+     <text [attr.x]="tx.text3x" [attr.y]="tx.text3y" class="heavy">{{tx.text3}}</text>
+     <text [attr.x]="tx.text4x" [attr.y]="tx.text4y" class="heavy">{{tx.text4}}</text>
+     <text [attr.x]="tx.text5x" [attr.y]="tx.text5y" class="heavy">{{tx.text5}}</text>
+</svg>
